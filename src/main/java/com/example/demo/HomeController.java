@@ -13,10 +13,10 @@ public class HomeController {
         return "index";
     }
 
-    public record Usuario(String nombre) {}
+    public record Usuario(String nombre, Integer edad) {}
 
     @GetMapping("/api/usuario")
     public Usuario usuario() {
-        return new Usuario("pepito pepon la revancha");
+        return new Usuario("pepito pepon la revancha", 120);
     }
 }
