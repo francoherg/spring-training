@@ -17,6 +17,6 @@ public class HomeController {
 
     @GetMapping("/api/usuario")
     public Usuario usuario() {
-        return new Usuario("pepito pepon la revancha", 120);
+        return new  Usuario("pepit la revancha", 120);
     }
 }
