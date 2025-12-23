@@ -3,12 +3,12 @@ package com.example.demo.service.impl;
 import com.example.demo.entities.Movie;
 import com.example.demo.repository.MovieRepository;
 import com.example.demo.service.IMovieService;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.List;
 
 @Service
 public class MovieService implements IMovieService {
@@ -28,5 +28,9 @@ public class MovieService implements IMovieService {
             log.error("Error al guardar película", e);
             return false;
         }
+    }
+
+    public List<Movie> FindAll() {
+        return dbRepository.findAll();
     }
 }

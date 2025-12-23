@@ -7,6 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @CrossOrigin(origins = "http://localhost:5173")
 @RequestMapping("/movies")
 @RestController
@@ -15,10 +17,8 @@ public class movieController {
     private MovieService movieService;
 
     @GetMapping
-    public Movie[] movies() { // tambien se puede usar list
-        return new Movie[] {
-                new Movie("Pepito pepon once again 2: mas pepeado que nunca", 240, "Messi")
-        };
+    public ResponseEntity<List<Movie>>getMovies() {
+        return new ResponseEntity<>(movieService.FindAll(), HttpStatus.OK);
     }
 
     @PostMapping("/new")
