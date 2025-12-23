@@ -14,7 +14,7 @@ public class movieController {
     @Autowired
     private MovieService movieService;
 
-    @GetMapping("/")
+    @GetMapping
     public Movie[] movies() { // tambien se puede usar list
         return new Movie[] {
                 new Movie("Pepito pepon once again 2: mas pepeado que nunca", 240, "Messi")
